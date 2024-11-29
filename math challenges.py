@@ -42,7 +42,7 @@ def math_challenge_equation():
         print("Wrong ! No key for you.")
         return False
 
-#return true if n is prime and false if its not
+#return true if n is prime and false if it is not
 def is_prime(n):
     cpt=0
     for i in range(1,n+1):
@@ -63,6 +63,7 @@ def nearest_prime(n):
         else:
             n+=1
 
+#ask the player to find the nearest prime number and return true if he's right and false if he's wrong
 def math_challenge_prime():
     n=random.randint(10,20)
     print("find the nearest prime number above {}".format(n))
@@ -73,3 +74,4 @@ def math_challenge_prime():
     else:
         print("Wrong ! No key for you.")
         return False
+
