@@ -62,3 +62,14 @@ def nearest_prime(n):
             return n
         else:
             n+=1
+
+def math_challenge_prime():
+    n=random.randint(10,20)
+    print("find the nearest prime number above {}".format(n))
+    x=int(input("Your answer: "))
+    if nearest_prime(n)==x:
+        print("Correct! You win a key.")
+        return True
+    else:
+        print("Wrong ! No key for you.")
+        return False
