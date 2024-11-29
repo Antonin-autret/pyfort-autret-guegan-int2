@@ -1,6 +1,5 @@
 #file where all the function used for math challenges
 
-
 import random
 #function that takes an integer and return his factorial
 def factorial(n):
