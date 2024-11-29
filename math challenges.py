@@ -20,5 +20,3 @@ def math_challenge_factorial():
         return False
 
 
-math_challenge_factorial()
-
