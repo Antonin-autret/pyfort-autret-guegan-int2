@@ -1,6 +1,9 @@
 #file where all the function used for math challenges
 
 import random
+
+
+
 #function that takes an integer and return his factorial
 def factorial(n):
     a=1
@@ -19,4 +22,23 @@ def math_challenge_factorial():
         print("Wrong! No key for you.")
         return False
 
+# function that generate a linear equation and its solution
+def solve_linear_equation():
+    a=random.randint(1,10)
+    b= random.randint(1, 10)
+    return [a,b,-b/a]
+
+# function that ask the solution af an equation to the player and return true if he's right and false if he's wrong
+def math_challenge_equation():
+    a=solve_linear_equation()[0]
+    b=solve_linear_equation()[1]
+    anw=solve_linear_equation()[2]
+    print("Solve the equation {}x + {} = 0".format(a,b))
+    x=float(input("What is the value of x: "))
+    if x==anw:
+        print("Correct! You win a key.")
+        return True
+    else:
+        print("Wrong ! No key for you.")
+        return False
 
