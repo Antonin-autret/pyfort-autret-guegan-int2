@@ -42,3 +42,23 @@ def math_challenge_equation():
         print("Wrong ! No key for you.")
         return False
 
+#return true if n is prime and false if its not
+def is_prime(n):
+    cpt=0
+    for i in range(1,n+1):
+        if n%i==0:
+            cpt+=1
+    if cpt==2:
+        return True
+    else:
+        return False
+
+
+#find the nearest greater or equal prime number of n
+def nearest_prime(n):
+    found=False
+    while not found:
+        if is_prime(n):
+            return n
+        else:
+            n+=1
