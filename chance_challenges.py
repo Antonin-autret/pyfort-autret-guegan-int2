@@ -19,5 +19,24 @@ def shell_game():
     return False
 
 def dice_game():
+    dice_p=[]
+    dice_gm=[]
     die_face=(" -------\n|       |\n|   o   |\n|       |\n -------"," -------\n| o     |\n|       |\n|     o |\n -------"," -------\n| o     |\n|   o   |\n|     o |\n -------"," -------\n| o   o |\n|       |\n| o   o |\n -------"," -------\n| o   o |\n|   o   |\n| o   o |\n -------"," -------\n| o   o |\n| o   o |\n| o   o |\n -------")
-dice_game()
+    print("wellcome in this game you will face the game master in a dice game.\nIn your turn you will throw two dice, your goal is to have a six on one die,after you the game master will do the same thing\nthe first to do a six will win the key\nafter three turns the game will end in a draw.")
+    for i in range(0,5,2):
+        input("press enter too throw your dice\n")
+        for j in range(2):
+            dice_p.append(random.randint(0,5))
+            dice_gm.append(random.randint(0, 5))
+        print('{}\n{}'.format(die_face[dice_p[i]],die_face[dice_p[i+1]]))
+        if dice_p[i]==5 or dice_p[i+1]==5:
+            print('Congratulations! You win this key')
+            return True
+        print("now it is the game master turn")
+        input("press enter too see game master's throw\n")
+        print('{}\n{}'.format(die_face[dice_gm[i]], die_face[dice_gm[i + 1]]))
+        if dice_gm[i]==5 or dice_gm[i+1]==5:
+            print('The game master won. No key for you')
+            return False
+    print('neither of you won. no one will have the key')
+    return False
