@@ -26,7 +26,7 @@ def dice_game():
     for i in range(0,5,2):
         input("press enter too throw your dice\n")
         for j in range(2):
-            dice_p.append(random.randint(0,5))
+            dice_p.append(random.randint(0,5)) # goes from 0 to 5 because it is easier to search for the correct die face in the list
             dice_gm.append(random.randint(0, 5))
         print('{}\n{}'.format(die_face[dice_p[i]],die_face[dice_p[i+1]]))
         if dice_p[i]==5 or dice_p[i+1]==5:
