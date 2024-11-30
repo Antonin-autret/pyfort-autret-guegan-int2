@@ -17,3 +17,7 @@ def shell_game():
             print('The key is not in this shell')
     print('Sorry but the key was under the shell {}'.format(pos_key))
     return False
+
+def dice_game():
+    die_face=(" -------\n|       |\n|   o   |\n|       |\n -------"," -------\n| o     |\n|       |\n|     o |\n -------"," -------\n| o     |\n|   o   |\n|     o |\n -------"," -------\n| o   o |\n|       |\n| o   o |\n -------"," -------\n| o   o |\n|   o   |\n| o   o |\n -------"," -------\n| o   o |\n| o   o |\n| o   o |\n -------")
+dice_game()
