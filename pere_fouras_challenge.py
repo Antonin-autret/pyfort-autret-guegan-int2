@@ -1,11 +1,7 @@
 import json
-
-PFfile="data/PFRiddles.json"
-
-def load_riddles(file):
+#load a json file and return its what is inside
+def load_file(file):
     pf = open(file,"r")
-
-
-
-
-def pere_fouras_riddles():
+    dico = json.load(pf)
+    pf.close()
+    return dico
