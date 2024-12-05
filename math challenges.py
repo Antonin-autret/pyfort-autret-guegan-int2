@@ -1,7 +1,7 @@
 #file where all the function used for math challenges
 
 import random
-
+from utility_functions import key2
 
 
 #function that takes an integer and return his factorial
@@ -17,6 +17,7 @@ def math_challenge_factorial():
     ans=int(input("Your answer: "))
     if ans==factorial(n):
         print("Correct! You win a key.")
+        key2(1)
         return True
     else:
         print("Wrong! No key for you.")
@@ -37,6 +38,7 @@ def math_challenge_equation():
     x=float(input("What is the value of x: "))
     if x==anw:
         print("Correct! You win a key.")
+        key2(1)
         return True
     else:
         print("Wrong ! No key for you.")
@@ -70,6 +72,7 @@ def math_challenge_prime():
     x=int(input("Your answer: "))
     if nearest_prime(n)==x:
         print("Correct! You win a key.")
+        key2(1)
         return True
     else:
         print("Wrong ! No key for you.")

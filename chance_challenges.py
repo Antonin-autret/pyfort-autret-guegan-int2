@@ -1,4 +1,5 @@
 import random
+from utility_functions import key2
 
 def shell_game():
     l=["A","B","C"]
@@ -12,6 +13,7 @@ def shell_game():
         x=(input("choose a shell: ")).upper()
         if x==l[pos_key]:
             print('Congratulations! You found it')
+            key2(1)
             return True
         else:
             print('The key is not in this shell')
@@ -31,6 +33,7 @@ def dice_game():
         print('{}\n{}'.format(die_face[dice_p[i]],die_face[dice_p[i+1]]))
         if dice_p[i]==5 or dice_p[i+1]==5:
             print('Congratulations! You win this key')
+            key2(1)
             return True
         print("now it is the game master turn")
         input("press enter too see game master's throw\n")
