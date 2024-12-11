@@ -15,6 +15,7 @@ def player_removal(n):
                 m=int(input("How many sticks do you want to remove (1,"))
 
 def master_removal(n):
-
+    print()
 
 def nim_game(n):
+    print()
