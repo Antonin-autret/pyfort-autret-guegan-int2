@@ -43,3 +43,6 @@ def dice_game():
             return False
     print('neither of you won. no one will have the key')
     return False
+def chance_callenge():
+    n= random.randint(1,2)
+

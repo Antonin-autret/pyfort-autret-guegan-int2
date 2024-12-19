@@ -73,5 +73,14 @@ def display_grid(l, message):
         print()
     print('-------------')
     print(message)
+def ask_position():
+    good = False
+    while not(good) :
+        good = True
+        list = input().split(',')
+        for val in list:
+            if int(val)>3 or int(val)<1 or len(list)!=2:
+                good =False
+    return(int(list[0]),int(list[1]))
+ask_position()
 
-display_grid(empty_grid(),'')
