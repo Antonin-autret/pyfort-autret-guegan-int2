@@ -10,6 +10,15 @@ def load_file(file):
 def pere_fouras_riddles():
     riddle =load_file('data/PFRiddles.json')[random.randint(0,11)]
     print(riddle['question'])
-    a=input("the ")
+    att = 3
+    print(riddle['answer'])
+    while att>0:
+        a=input("the ")
+        if a.lower()== riddle['answer'].lower().split()[1]:
+            return True
+        else:
+            att-=1
+            print('try again you have {} attempts left'.format(att))
+    return False
 
-pere_fouras_riddles()
+print(pere_fouras_riddles())
