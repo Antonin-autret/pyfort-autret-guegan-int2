@@ -43,6 +43,10 @@ def dice_game():
             return False
     print('neither of you won. no one will have the key')
     return False
-def chance_callenge():
+def chance_challenge():
     n= random.randint(1,2)
+    if n == 1:
+        return dice_game()
+    else:
+        return shell_game()
 

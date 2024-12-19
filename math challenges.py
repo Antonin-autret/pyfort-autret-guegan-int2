@@ -78,3 +78,11 @@ def math_challenge_prime():
         print("Wrong ! No key for you.")
         return False
 
+def math_challenge():
+    n=random.randint(1,3)
+    if n==1:
+        return math_challenge_prime()
+    elif n==2:
+        return math_challenge_factorial()
+    else:
+        return math_challenge_equation()
