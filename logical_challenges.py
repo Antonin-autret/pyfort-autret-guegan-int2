@@ -56,3 +56,22 @@ def nim_game():
     else:
         print("The player removed the last stick. The player loses !")
     return player_turn
+
+def next_player(n):
+    if n==1:
+        return 0
+    else :
+        return 1
+def empty_grid():
+    l=[['2',' ',' '],[' ',' ',' '],[' ',' ',' ']]
+    return l
+def display_grid(l, message):
+    for i in range(3):
+        print('|', end='')
+        for j in range(3):
+            print('',l[i][j],'|',end='')
+        print()
+    print('-------------')
+    print(message)
+
+display_grid(empty_grid(),'')
