@@ -59,7 +59,7 @@ def nim_game():
 
 
 
-def display_tic_grid(grid):
+def display_tictactoe_grid(grid):
     for row in grid:
         print(row[0], "|", row[1], "|",row[2])
         if row!=grid[2]:                        # We don't want a line of dash after the third row (row index 2 of the grid)
