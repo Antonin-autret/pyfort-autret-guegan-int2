@@ -57,6 +57,37 @@ def nim_game():
         print("The player removed the last stick. The player loses !")
     return player_turn
 
+
+
+def display_tic_grid(grid):
+    for row in grid:
+        print(row[0], "|", row[1], "|",row[2])
+        if row!=grid[2]:                        # We don't want a line of dash after the third row (row index 2 of the grid)
+            print("---------")
+
+def check_victory(grid, symbol):
+    print()
+
+def master_move(grid, symbol):
+    print()
+
+def player_turn(grid):
+    print()
+
+def master_turn(grid):
+    print()
+
+def full_grid():
+    print()
+
+def check_result(grid):
+    print()
+
+def tictactoe_game():
+    print()
+
+
+
 def next_player(n):
     if n==1:
         return 0
