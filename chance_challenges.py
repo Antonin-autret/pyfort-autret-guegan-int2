@@ -49,4 +49,3 @@ def chance_challenge():
         return dice_game()
     else:
         return shell_game()
-
