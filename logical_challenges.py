@@ -202,3 +202,10 @@ def tictactoe_game():
         playerWin = True
         print("The player X has won !")
     return playerWin
+
+def logical_challenge():
+    n=random.randint(0,1)
+    if n==0:
+        return nim_game()
+    else:
+        return tictactoe_game()
