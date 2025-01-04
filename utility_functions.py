@@ -30,5 +30,5 @@ def composeTeam():
     else:
         leader=1
     for i in (l):
-        i["role"]=["member"]
-    l[leader-1]["role"]=["leader"]
+        i["role"]="member"
+    l[leader-1]["role"]="leader"
