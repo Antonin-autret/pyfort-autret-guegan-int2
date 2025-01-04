@@ -1,4 +1,4 @@
-from os import remove
+import random
 
 
 def display_stick(n):
@@ -59,59 +59,146 @@ def nim_game():
 
 
 
-def display_tic_grid(grid):
+def display_grid(grid):
     for row in grid:
         print(row[0], "|", row[1], "|",row[2])
-        if row!=grid[2]:                        # We don't want a line of dash after the third row (row index 2 of the grid)
-            print("---------")
+        print("---------")
 
 def check_victory(grid, symbol):
-    print()
+    n = len(grid)
+
+    # Check rows
+    for row in grid:
+        victory = True
+        for cell in row:
+            if cell != symbol:
+                victory = False
+                break
+        if victory:
+            return True
+
+    # Check columns
+    for col in range(n):
+        victory = True
+        for row in range(n):
+            if grid[row][col] != symbol:
+                victory = False
+                break
+        if victory:
+            return True
+
+    # Check diagonal
+    victory = True
+    for i in range(n):
+        if grid[i][i] != symbol:
+            victory = False
+            break
+    if victory:
+        return True
+
+    # Check anti-diagonal
+    victory = True
+    for i in range(n):
+        if grid[i][n - 1 - i] != symbol:
+            victory = False
+            break
+    if victory:
+        return True
+    else:
+        return False
+
 
 def master_move(grid, symbol):
-    print()
+    n = len(grid)
+    empty_cells = []
+    player_symbol = 'X'
+    if symbol == 'X':
+        player_symbol = 'O'
+
+    # Check if the master can win with the next move
+    for row in range(n):
+        for col in range(n):
+            if grid[row][col] == ' ':  # Check if the cell is empty
+                grid[row][col] = symbol  # Tentative move to see if the master win
+                if check_victory(grid, symbol):
+                    grid[row][col] = ' '  # Undo the tentative move
+                    return (row, col)
+                grid[row][col] = ' '  # Undo the tentative move
+
+    # Check if the master needs to block the opponent's win
+    for row in range(n):
+        for col in range(n):
+            if grid[row][col] == ' ':
+                grid[row][col] = player_symbol  # Tentative move to see if the player can win
+                if check_victory(grid, player_symbol):
+                    grid[row][col] = ' '
+                    return (row, col)
+                grid[row][col] = ' '
+
+    # Play a random move if there is no winning or blocking move
+    for row in range(n):
+        for col in range(n):
+            if grid[row][col] == ' ':
+                empty_cells.append((row,col))
+    if empty_cells:
+        return random.choice(empty_cells)
+    else:
+        return None   # If no moves are possible (so if the grid is full), return None
+
 
 def player_turn(grid):
-    print()
+    print("Player X, it's your turn.")
+    notValid = True
+    while notValid:
+        move = input("Enter your move in the form 'row,column': ")
+        row, col = map(int, move.split(','))
+
+        # Check if the entered coordinates are valid
+        if row < 0 or row >= len(grid) or col < 0 or col >= len(grid):
+            print("Invalid move : the coordinates are out of bounds. Try again.")
+
+        else:
+            # Check if the selected square is empty
+            if grid[row][col] == ' ':
+                grid[row][col] = 'X'
+                notValid = False
+            else:
+                print("That square is already occupied. Choose a different square.")
+    return grid
 
 def master_turn(grid):
-    print()
+    print("Game master's turn.")
+    move = master_move(grid, 'O')
+    if move:
+        (row,col) = move
+        grid[row][col] = 'O'  # Place the master's symbol at the chosen position
+    return grid
 
-def full_grid():
-    print()
+def full_grid(grid):
+    for row in grid:
+        if ' ' in row:
+            return False
+    return True
 
 def check_result(grid):
-    print()
+    if check_victory(grid, 'X') or check_victory(grid, 'O'):
+        return True
+    if full_grid(grid):
+        return True
+    return False
 
 def tictactoe_game():
-    print()
+    grid = [[' ', ' ', ' '],[' ', ' ', ' '],[' ', ' ', ' ']]
+    playerWin = False
 
-
-
-def next_player(n):
-    if n==1:
-        return 0
-    else :
-        return 1
-def empty_grid():
-    l=[['2',' ',' '],[' ',' ',' '],[' ',' ',' ']]
-    return l
-def display_grid(l, message):
-    for i in range(3):
-        print('|', end='')
-        for j in range(3):
-            print('',l[i][j],'|',end='')
-        print()
-    print('-------------')
-    print(message)
-def ask_position():
-    good = False
-    while not(good) :
-        good = True
-        list = input().split(',')
-        for val in list:
-            if int(val)>3 or int(val)<1 or len(list)!=2:
-                good =False
-    return(int(list[0]),int(list[1]))
-
-
+    while check_result(grid) == False:
+        display_grid(grid)
+        player_turn(grid)
+        if check_result(grid) == False:
+            master_turn(grid)
+    print("The game has ended.")
+    display_grid(grid)
+    if check_victory(grid, 'X'):
+        playerWin = True
+        print("The player X has won !")
+    return playerWin
