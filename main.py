@@ -27,6 +27,6 @@ def game():
         keys=0
         for i in team:
             keys+=i['keys_wons']
-    won_finalgame= final_challenge()
+    won_finalgame= treasury_room()
 if __name__ == '__main__':
     game()
