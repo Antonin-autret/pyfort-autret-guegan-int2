@@ -113,5 +113,5 @@ def ask_position():
             if int(val)>3 or int(val)<1 or len(list)!=2:
                 good =False
     return(int(list[0]),int(list[1]))
-ask_position()
+
 

@@ -1,9 +1,9 @@
 from chance_challenges import *
-from utility_functions import*
-from pere_fouras_challenge import*
-from math_challenges import*
-from logical_challenges import*
-from final_challenge import*
+from utility_functions import *
+from pere_fouras_challenge import *
+from math_challenges import *
+
+from final_challenge import *
 
 def game():
     Introduction()
@@ -15,11 +15,11 @@ def game():
 
         if chall==1:
             won =math_challenge()
-        elif chall ==2:
-            won =logical_challenge()
+        #elif chall ==2:
+        #    won =logical_challenge()
         elif chall ==3:
             won =chance_challenge()
-        else:
+        elif chall ==4:
             won =pere_fouras_riddles()
         if won:
             player['keys_wons']+=1

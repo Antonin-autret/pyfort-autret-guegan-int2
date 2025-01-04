@@ -19,5 +19,3 @@ def pere_fouras_riddles():
             att-=1
             print('try again you have {} attempts left'.format(att))
     return False
-
-pere_fouras_riddles()
