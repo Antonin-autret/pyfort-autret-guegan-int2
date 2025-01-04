@@ -38,7 +38,7 @@ def challenges_menu():
     print("chose your challenge\n1. Mathematics challenge\n2. Logic challenge\n3. Chance challenge\n4. Père Fouras' riddle")
     choose=-1
     while choose < 1 or choose > 4:
-        int(input("please enter a number between 1 and 4:"))
+        choose =int(input("please enter a number between 1 and 4:"))
     return choose
 def choose_player(team):
     for i in team:
