@@ -40,3 +40,10 @@ def challenges_menu():
     while choose < 1 or choose > 4:
         int(input("please enter a number between 1 and 4:"))
     return choose
+def choose_player(team):
+    for i in team:
+        print("{} ({}) -{}".format(i["Name"],i["profession"],i["role"]))
+    chosenplayer=-1
+    while chosenplayer>len(team) or chosenplayer<1:
+        print("Enter the player's number")
+    return team[chosenplayer-1]
