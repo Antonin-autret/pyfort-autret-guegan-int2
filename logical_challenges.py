@@ -183,10 +183,13 @@ def player_turn(grid):
         row, col = map(int, move.split(','))
 
         # Check if the entered coordinates are valid
-        if row < 0 or row >= len(grid) or col < 0 or col >= len(grid):
-            print("Invalid move : the coordinates are out of bounds. Try again.")
+        if row < 1 or row > len(grid) or col < 1 or col > len(grid):
+            print("Invalid move : the coordinates are out of bounds (from 1 to 3). Try again.")
 
         else:
+            # More understandable to choose the cell going from 1 to 3 than 0 to 2.
+            row = row - 1
+            col = col - 1
             # Check if the selected square is empty
             if grid[row][col] == ' ':
                 grid[row][col] = 'X'
@@ -249,6 +252,10 @@ def tictactoe_game():
         playerWin = True
         print("The player X has won !")
         key2(1)
+    elif check_victory(grid, 'O'):
+        print("The player X lost.")
+    else:
+        print("The game ended in a draw.")
     return playerWin
 
 #Randomly select a logical challenge.
