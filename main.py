@@ -1,3 +1,7 @@
+#FORT BOYARD SIMULATOR, Antonin AUTRET and Charles GUEGAN
+#This is the main file of this project which call all the function used for the game.
+
+
 from utility_functions import *
 from chance_challenges import *
 from pere_fouras_challenge import *

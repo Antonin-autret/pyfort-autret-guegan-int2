@@ -1,7 +1,11 @@
+#FORT BOYARD SIMULATOR, Antonin AUTRET and Charles GUEGAN
+#This file contains all the function used for the riddles of Père Fouras that will be told to the players.
+
+
 import json
 import random
 from utility_functions import key2
-#load a json file and return its what is inside
+#load a json file and return what is inside
 def load_file(file):
     pf = open(file,"r")
     dico = json.load(pf)

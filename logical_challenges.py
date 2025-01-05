@@ -1,6 +1,8 @@
+#FORT BOYARD SIMULATOR, Antonin AUTRET and Charles GUEGAN
+#This file contains all the function used for the logical challenges.
+
 import random
 from utility_functions import key2
-
 
 #Takes as parameter an integer n, representing the number of sticks remaining, and displays this number using bars (|), with each bar corresponding to one stick.
 def display_stick(n):

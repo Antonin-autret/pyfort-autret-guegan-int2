@@ -1,4 +1,5 @@
-#file where all the function used for math challenges
+#FORT BOYARD SIMULATOR, Antonin AUTRET and Charles GUEGAN
+#file where all the function used for math challenges.
 
 import random
 from utility_functions import key2
@@ -68,7 +69,7 @@ def nearest_prime(n):
 
 def math_challenge_prime():
     n=random.randint(10,20)
-    print("find the nearest prime number above {}".format(n))
+    print("Find the nearest prime number above {}".format(n))
     x=int(input("Your answer: "))
     if nearest_prime(n)==x:
         print("Correct! You win a key.")

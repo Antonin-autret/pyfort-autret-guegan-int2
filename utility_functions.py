@@ -1,3 +1,6 @@
+#FORT BOYARD SIMULATOR, Antonin AUTRET and Charles GUEGAN
+#This file contains all the utility functions that are used for creating a team and the convenience of the game. It also containq additional features.
+
 def key2(n):
     line=["   @@@@%           ","  @     @@@@@@@@@@@","  @      @    @@ @ ","   @@@@%           "]
     for i in range(4):
@@ -47,7 +50,7 @@ def challenges_menu():
 #display all the challenges and ask the user to choose one then return the number corresponding to the choice of the user
 def choose_player(team):
     for i in team:
-        print("{} ({}) -{}".format(i["Name"],i["profession"],i["role"]))
+        print("({}) -{}".format(i["profession"],i["role"]))
     chosenplayer=-1
     while chosenplayer>len(team) or chosenplayer<1:
         print("Enter the player who is going to play the challenge:",end='')
