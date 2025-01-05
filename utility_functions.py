@@ -16,8 +16,9 @@ def composeTeam():
     while team<1 or team >3:
         print("Please enter a number between 1 and 3")
         team = int(input())
-    player1,player2,player3={},{},{}
-    l=[player1,player2,player3]
+    l=[]
+    for i in range(team):
+        l.append({})
     for i in range(team):
         l[i]["Name"]=input("what is your name player?")
         l[i]["profession"]=input("what is {}'s profession ?".format(l[i]["Name"]))
@@ -45,5 +46,6 @@ def choose_player(team):
         print("{} ({}) -{}".format(i["Name"],i["profession"],i["role"]))
     chosenplayer=-1
     while chosenplayer>len(team) or chosenplayer<1:
-        print("Enter the player's number")
+        print("Enter the player who is going to play the challenge:",end='')
+        chosenplayer =int(input())
     return team[chosenplayer-1]

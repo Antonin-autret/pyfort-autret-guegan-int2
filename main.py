@@ -1,8 +1,8 @@
-from chance_challenges import *
 from utility_functions import *
+from chance_challenges import *
 from pere_fouras_challenge import *
 from math_challenges import *
-
+from logical_challenges import *
 from final_challenge import *
 
 def game():
@@ -15,8 +15,8 @@ def game():
 
         if chall==1:
             won =math_challenge()
-        #elif chall ==2:
-        #    won =logical_challenge()
+        elif chall ==2:
+            won =logical_challenge()
         elif chall ==3:
             won =chance_challenge()
         elif chall ==4:
