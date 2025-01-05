@@ -86,3 +86,4 @@ def math_challenge():
         return math_challenge_factorial()
     else:
         return math_challenge_equation()
+# choose a random math challenge and call the coresponding function
