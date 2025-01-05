@@ -4,7 +4,7 @@ def key2(n):
         for j in range(n):
             print(line[i],end='')
         print('')
-#takes an integer n as the argument and display a key drawing with ascii characters in the same lines n times
+# takes an integer n as the argument and display a key drawing with ascii characters in the same lines n times
 def Introduction():
     print("Welcome to the Fortress of Adventure! Only the bravest will conquer the challenges and claim the ultimate treasure. Are you ready to begin?")
     print("Your mission is simple:")

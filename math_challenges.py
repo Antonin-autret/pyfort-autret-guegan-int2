@@ -22,7 +22,7 @@ def math_challenge_factorial():
     else:
         print("Wrong! No key for you.")
         return False
-# function that generate a random integer between 1 and 10 and ask the user the factorial of it(return True if right and False otherwise)
+#function that generate a random integer between 1 and 10 and ask the user the factorial of it(return True if right and False otherwise)
 
 def solve_linear_equation():
     a=random.randint(1,10)
