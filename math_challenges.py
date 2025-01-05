@@ -10,7 +10,7 @@ def factorial(n):
     for i in range(1,n+1):
         a*=i
     return a
-#function that takes an integer and return his factorial
+#function that takes an integer as argument and return his factorial
 def math_challenge_factorial():
     n=random.randint(1,10)
     print("Calculate the factorial of {}".format(n))
@@ -28,7 +28,7 @@ def solve_linear_equation():
     a=random.randint(1,10)
     b= random.randint(1, 10)
     return [a,b,-b/a]
-# function that generate a linear equation and its solution
+# function that generate two integer a and b between 1 and 10 and the solution of ax+b=0
 
 def math_challenge_equation():
     a=solve_linear_equation()[0]
@@ -54,7 +54,7 @@ def is_prime(n):
         return True
     else:
         return False
-#return true if n is prime and false if it is not
+#takes a integer as argument and return true if it is prime and false if it is not
 
 
 def nearest_prime(n):
@@ -64,7 +64,7 @@ def nearest_prime(n):
             return n
         else:
             n+=1
-#find the nearest greater or equal prime number of n
+# find the nearest greater or equal prime number of n and return it
 
 def math_challenge_prime():
     n=random.randint(10,20)
