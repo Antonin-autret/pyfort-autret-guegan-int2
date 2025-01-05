@@ -6,7 +6,7 @@ def load_file(file):
     dico = json.load(pf)
     pf.close()
     return dico
-
+#takes a string as the argument and return the content of the file with the argument as its name
 def treasury_room():
     riddle =load_file('data/TRClues.json')["Fort Boyard"]
     list_years=list(riddle.keys())
@@ -29,3 +29,4 @@ def treasury_room():
         att -= 1
     print("sorry but you failed and are now stuck forever on the Fort Boyard with Olivier Minne as your only friend")
     return False
+#load riddles from the TRClues.json file and ask the user to solve it in less than three tries and return true if the player won and false if he loosed
