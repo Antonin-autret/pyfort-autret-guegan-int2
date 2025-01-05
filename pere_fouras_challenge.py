@@ -20,5 +20,8 @@ def pere_fouras_riddles():
             return True
         else:
             att-=1
+            if att==0:
+                print("You lose!")
+                return False
             print('try again you have {} attempts left'.format(att))
-    return False
+
