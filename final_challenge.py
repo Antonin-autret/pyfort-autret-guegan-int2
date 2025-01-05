@@ -1,4 +1,4 @@
-#load a json file and return its what is inside
+#load a json file and return it's what is inside
 import json
 import random
 def load_file(file):
