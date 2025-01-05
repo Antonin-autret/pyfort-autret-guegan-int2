@@ -13,7 +13,7 @@ def Introduction():
     print("Your mission is simple:")
     print("Complete challenges to earn keys and unlock the treasure room.")
     print("Collect three keys to gain access to the treasure and claim your victory!")
-#diplay the introduction text that explain the rules to the players
+#display the introduction text that explain the rules to the players
 def composeTeam():
     team =-1
     print("Now, tell me how many players are in your team? (the number of players cannot be greater than 3)")

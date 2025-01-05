@@ -4,7 +4,6 @@
 import json
 import random
 
-#load a json file and return it's what is inside
 def load_file(file):
     pf = open(file,"r")
     dico = json.load(pf)
