@@ -19,7 +19,7 @@ def shell_game():
             print('The key is not in this shell')
     print('Sorry but the key was under the shell {}'.format(pos_key))
     return False
-
+#challenge that ask the player to choose between three shells to find a key (in two tries) and return true if the player won and false if he loosed
 def dice_game():
     dice_p=[]
     dice_gm=[]
@@ -43,9 +43,11 @@ def dice_game():
             return False
     print('neither of you won. no one will have the key')
     return False
+#challenge that ask the player to press enter to throw a dice reprensented by ascii char and return true if the player won and false if he loosed
 def chance_challenge():
     n= random.randint(1,2)
     if n == 1:
         return dice_game()
     else:
         return shell_game()
+#choose a challenge from the logical one and execute the function
