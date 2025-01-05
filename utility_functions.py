@@ -20,12 +20,12 @@ def composeTeam():
     for i in range(team):
         l.append({})
     for i in range(team):
-        l[i]["Name"]=input("what is your name player?")
-        l[i]["profession"]=input("what is {}'s profession ?".format(l[i]["Name"]))
+        l[i]["Name"]=input("What is your name, player?:")
+        l[i]["profession"]=input("What is {}'s profession ?".format(l[i]["Name"]))
     leader=0
     if team!=1:
         leader=-1
-        while leader<1 or leader >3:
+        while leader<1 or leader >team:
             print("which one of the team member is the leader ? (enter the number of the player corresponding to the order in which you placed him in the team)")
             leader=int(input())
     else:

@@ -1,5 +1,5 @@
 import random
-
+from utility_functions import key2
 
 def display_stick(n):
     for i in range(n):
@@ -52,7 +52,8 @@ def nim_game():
             n-=master_removal(n)
             player_turn=True
     if player_turn:
-        print("The game master removed the last stick. The player wins !")
+        print("The game master removed the last stick. The player wins the key!")
+        key2(1)
     else:
         print("The player removed the last stick. The player loses !")
     return player_turn
@@ -201,6 +202,7 @@ def tictactoe_game():
     if check_victory(grid, 'X'):
         playerWin = True
         print("The player X has won !")
+        key2(1)
     return playerWin
 
 def logical_challenge():

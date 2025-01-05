@@ -1,5 +1,6 @@
 import json
 import random
+from utility_functions import key2
 #load a json file and return its what is inside
 def load_file(file):
     pf = open(file,"r")
@@ -14,6 +15,8 @@ def pere_fouras_riddles():
     while att>0:
         a=input("the ")
         if a.lower()== riddle['answer'].lower().split()[1]:
+            print("correct you win a key!")
+            key2(1)
             return True
         else:
             att-=1
