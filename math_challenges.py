@@ -10,7 +10,7 @@ def factorial(n):
     for i in range(1,n+1):
         a*=i
     return a
-#function that takes an integer as argument and return his factorial
+#function that takes an integer as argument and return its factorial
 def math_challenge_factorial():
     n=random.randint(1,10)
     print("Calculate the factorial of {}".format(n))
