@@ -181,7 +181,6 @@ Antonin AUTRET worked on math challenges, the utility functions, the chance chal
 Charles GUEGAN worked on the logical challenges, the program testing, the commentaries, the excel and the readme file. 
 
  
-
 Testing and Validation 
 
 Test strategies: to test any function we just called it in the curent program during coding  and for the main game coding at the end we played the game multiple times just to se if the game was coherent and fun to play 
