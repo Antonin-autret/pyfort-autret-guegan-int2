@@ -1,11 +1,15 @@
 import random
 from utility_functions import key2
 
+
+#Takes as parameter an integer n, representing the number of sticks remaining, and displays this number using bars (|), with each bar corresponding to one stick.
 def display_stick(n):
     for i in range(n):
         print("|",end="")
     print("")
 
+#Takes an integer n, representing the number of sticks remaining. This function asks the player to choose how many sticks to remove (1, 2, or 3), ensuring that
+# the input is valid. It returns the number of sticks removed by the player.
 def player_removal(n):
     r=0   #r is the number of stick removed by the player.
     if n>3:
@@ -25,6 +29,9 @@ def player_removal(n):
         r=1
     return r
 
+#Takes as parameter an integer n, representing the number of sticks remaining. It applies an AI strategy based on the remainder of the division of n by 4.
+# The AI (the game master) chooses the number of sticks to remove according to this strategy, with the goal of forcing the opponent to lose. It returns the number
+# of sticks removed by the game master.
 def master_removal(n):
     r=0     #r is the number of stick removed by the game master.
     if n%4==0:
@@ -39,6 +46,17 @@ def master_removal(n):
         print("The game master removes "+str(r)+" sticks.")
     return r
 
+#This is the main function of the stick game. It will call the functions defined above to manage the flow of the game as follows:
+#1. Initialize the number of sticks to 20.
+#2. Uses a Boolean variable to indicate that it's the player's turn.
+#3. As long as the number of sticks is not zero:
+#Displays the remaining sticks.
+#An iteration represents one turn, either that of the player or that of the game master.
+#The number of sticks removed is retrieved by calling the corresponding function.
+#Update and display the number of sticks remaining after each round.
+#4. The game continues, alternating between players, until no sticks remain.
+#5. The player who removes the last stick is declared the loser.
+#6. The function returns True if the player wins, and False otherwise.
 def nim_game():
     n=20
     player_turn=True
@@ -60,11 +78,15 @@ def nim_game():
 
 
 
+#The function takes as parameter a 3x3 grid, represented by a 2D list, and displays it. Each grid cell can be empty (" ") or contain a symbol ('X' or 'O'), with a
+#separator between lines.
 def display_grid(grid):
     for row in grid:
         print(row[0], "|", row[1], "|",row[2])
         print("---------")
 
+#This function takes a 2D grid list and a symbol string ('X' or 'O') as parameters. It examines the rows, columns, and diagonals of the grid to check if the symbol
+#has won, returning True if it has, otherwise False.
 def check_victory(grid, symbol):
     n = len(grid)
 
@@ -108,7 +130,9 @@ def check_victory(grid, symbol):
     else:
         return False
 
-
+#The function takes as parameters a 2D grid list, representing the current state of the game grid, and a symbol string, representing the game master's symbol. This
+#function determines the game master's move first to win, then to block the player if necessary, and finally plays a random move if none of these actions is
+#required. It returns a tuple (row, column) corresponding to the coordinates of the chosen square.
 def master_move(grid, symbol):
     n = len(grid)
     empty_cells = []
@@ -146,7 +170,9 @@ def master_move(grid, symbol):
     else:
         return None   # If no moves are possible (so if the grid is full), return None
 
-
+#This function takes a 2D grid list as a parameter, representing the current state of the game. It allows the player (symbol 'X') to place their symbol in an empty
+#square. The player is prompted to enter the coordinates of the square in row, column format. Before placing the symbol, the function checks if the chosen square is
+#empty. If the square is already occupied, the player is asked to select a different square. The grid is then updated with the player's move.
 def player_turn(grid):
     print("Player X, it's your turn.")
     notValid = True
@@ -167,6 +193,8 @@ def player_turn(grid):
                 print("That square is already occupied. Choose a different square.")
     return grid
 
+#The function takes as parameter a 2D grid list, representing the current state of the game grid. This function directly modifies the grid by placing the game
+#master's move ('O'). The game master plays according to the strategy defined in the master_move() function.
 def master_turn(grid):
     print("Game master's turn.")
     move = master_move(grid, 'O')
@@ -175,12 +203,17 @@ def master_turn(grid):
         grid[row][col] = 'O'  # Place the master's symbol at the chosen position
     return grid
 
+#The function takes as parameter a 2D grid list, representing the current state of the game grid. It returns True if the grid is complete (no empty cells), otherwise
+#False. This function is used to check whether the game has ended in a draw or can continue.
 def full_grid(grid):
     for row in grid:
         if ' ' in row:
             return False
     return True
 
+#This function takes a 2D grid list representing the current game state as a parameter. It returns True if the game has ended, meaning that either player 'X' or the
+#game master (player 'O') has won, or if the game has ended in a draw. It checks the results using the check_victory() and full_grid() functions. If no end-of-game
+#condition is met, it returns False, meaning that the game continues.
 def check_result(grid):
     if check_victory(grid, 'X') or check_victory(grid, 'O'):
         return True
@@ -188,6 +221,17 @@ def check_result(grid):
         return True
     return False
 
+#This is the main function that orchestrates the entire game. It takes no parameters and returns True if player 'X' wins the game, and False otherwise
+#(i.e., if the game master wins or a draw occurs). Here's how it works:
+#1. The grid (2D list) is initialized with empty spaces.
+#2. A loop is defined to alternate turns between the player and the game master:
+#   -The player_turn() function is called to manage the player's move. It allows
+#   -the player to place their symbol ('X') on the grid.
+#   -The check_result() function is called to check whether the game is over (win or draw). If player 'X' wins, the function returns True. If the game hasn’t ended
+#after the player’s turn, the master_turn() function is called to allow the game master (symbol 'O') to make their move.
+#   -The check_result() function is called again to check if the game master wins or if the grid is complete. If the game master wins or a draw is detected, the
+#function returns False.
+#3. The loop continues until a player wins or the grid is complete, indicating a draw. If either of these events occurs, the game ends
 def tictactoe_game():
     grid = [[' ', ' ', ' '],[' ', ' ', ' '],[' ', ' ', ' ']]
     playerWin = False
@@ -205,6 +249,7 @@ def tictactoe_game():
         key2(1)
     return playerWin
 
+#Randomly select a logical challenge.
 def logical_challenge():
     n=random.randint(0,1)
     if n==0:
