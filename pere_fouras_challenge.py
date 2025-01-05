@@ -5,13 +5,13 @@
 import json
 import random
 from utility_functions import key2
-#load a json file and return what is inside
+
 def load_file(file):
     pf = open(file,"r")
     dico = json.load(pf)
     pf.close()
     return dico
-
+#load a json file and return what is inside
 def pere_fouras_riddles():
     riddle =load_file('data/PFRiddles.json')[random.randint(0,11)]
     print(riddle['question'])
@@ -28,4 +28,4 @@ def pere_fouras_riddles():
                 print("You lose!")
                 return False
             print('try again you have {} attempts left'.format(att))
-
+#load riddles from the PFRiddles.json file and ask the user to solve it in less than three tries and return true if the player won and false if he loosed

@@ -4,7 +4,6 @@
 import json
 import random
 
-#load a json file and return it's what is inside
 def load_file(file):
     pf = open(file,"r")
     dico = json.load(pf)
@@ -31,6 +30,6 @@ def treasury_room():
             print("new clue:",nice['Clues'][i])
             i+=1
         att -= 1
-    print("Sorry but you failed and are now stuck forever on the Fort Boyard with Olivier Minne as your only friend")
+    print("Sorry but you failed the correct word was {}.\nYou are now stuck forever on the Fort Boyard with Olivier Minne as your only friend".format(nice["CODE-WORD"]))
     return False
 #load riddles from the TRClues.json file and ask the user to solve it in less than three tries and return true if the player won and false if he loosed
